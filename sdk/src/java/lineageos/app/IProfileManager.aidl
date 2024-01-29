@@ -18,7 +18,6 @@
 package lineageos.app;
 
 import lineageos.app.Profile;
-import android.app.NotificationGroup;
 import android.os.ParcelUuid;
 
 /** {@hide} */

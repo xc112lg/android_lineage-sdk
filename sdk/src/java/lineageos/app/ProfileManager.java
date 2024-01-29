@@ -20,7 +20,6 @@ import java.util.UUID;
 
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
-import android.app.NotificationGroup;
 import android.content.Context;
 import android.os.IBinder;
 import android.os.ParcelUuid;
