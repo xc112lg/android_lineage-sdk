@@ -36,14 +36,9 @@ interface IProfileManager
     Profile[] getProfiles();
     boolean profileExists(in ParcelUuid profileUuid);
     boolean profileExistsByName(String profileName);
-    boolean notificationGroupExistsByName(String notificationGroupName);
 
-    NotificationGroup[] getNotificationGroups();
-    void addNotificationGroup(in NotificationGroup group);
-    void removeNotificationGroup(in NotificationGroup group);
-    void updateNotificationGroup(in NotificationGroup group);
-    NotificationGroup getNotificationGroupForPackage(in String pkg);
-    NotificationGroup getNotificationGroup(in ParcelUuid groupParcelUuid);
+
+
 
     void resetAll();
     boolean isEnabled();

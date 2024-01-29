@@ -416,118 +416,21 @@ public class ProfileManager {
         }
     }
 
-    /**
-     * Check if a NotificationGroup exists
-     * @param notificationGroupName the name of the notification group
-     * @return whether or not the notification group exists
-     * @hide
-     */
-    public boolean notificationGroupExists(String notificationGroupName) {
-        try {
-            return getService().notificationGroupExistsByName(notificationGroupName);
-        } catch (RemoteException e) {
-            Log.e(TAG, e.getLocalizedMessage(), e);
-            // To be on the safe side, we'll return "true", to prevent duplicate notification
-            // groups from being created.
-            return true;
-        }
-    }
+
+
+
 
     /**
-     * Get the currently available NotificationGroups
-     * @return NotificationGroup
-     * @hide
-     */
-    public NotificationGroup[] getNotificationGroups() {
-        try {
-            return getService().getNotificationGroups();
-        } catch (RemoteException e) {
-            Log.e(TAG, e.getLocalizedMessage(), e);
-        }
-        return null;
-    }
+ 
 
-    /**
-     * Add a NotificationGroup to the available list
-     * @param group NotificationGroup
-     * @hide
-     */
-    public void addNotificationGroup(NotificationGroup group) {
-        try {
-            getService().addNotificationGroup(group);
-        } catch (RemoteException e) {
-            Log.e(TAG, e.getLocalizedMessage(), e);
-        }
-    }
 
-    /**
-     * Remove a NotificationGroup from the available list
-     * @param group NotificationGroup
-     * @hide
-     */
-    public void removeNotificationGroup(NotificationGroup group) {
-        try {
-            getService().removeNotificationGroup(group);
-        } catch (RemoteException e) {
-            Log.e(TAG, e.getLocalizedMessage(), e);
-        }
-    }
+ 
 
-    /**
-     * Update a NotificationGroup from the available list
-     * @param group NotificationGroup
-     * @hide
-     */
-    public void updateNotificationGroup(NotificationGroup group) {
-        try {
-            getService().updateNotificationGroup(group);
-        } catch (RemoteException e) {
-            Log.e(TAG, e.getLocalizedMessage(), e);
-        }
-    }
+  
 
-    /**
-     * Get a NotificationGroup for a specific package
-     * @param pkg name of the package
-     * @hide
-     */
-    public NotificationGroup getNotificationGroupForPackage(String pkg) {
-        try {
-            return getService().getNotificationGroupForPackage(pkg);
-        } catch (RemoteException e) {
-            Log.e(TAG, e.getLocalizedMessage(), e);
-        }
-        return null;
-    }
+   
 
-    /**
-     * Get a NotificationGroup from the available list via {@link UUID}
-     * @param uuid {@link UUID} of the notification group
-     * @hide
-     */
-    public NotificationGroup getNotificationGroup(UUID uuid) {
-        try {
-            return getService().getNotificationGroup(new ParcelUuid(uuid));
-        } catch (RemoteException e) {
-            Log.e(TAG, e.getLocalizedMessage(), e);
-        }
-        return null;
-    }
 
-    /**
-     * Get an active {@link ProfileGroup} via its package name
-     * @param packageName the package name associated to the profile group
-     * @return {@link ProfileGroup}
-     * @hide
-     */
-    public ProfileGroup getActiveProfileGroup(String packageName) {
-        NotificationGroup notificationGroup = getNotificationGroupForPackage(packageName);
-        if (notificationGroup == null) {
-            ProfileGroup defaultGroup = getActiveProfile().getDefaultGroup();
-            return defaultGroup;
-        }
-        return getActiveProfile().getProfileGroup(notificationGroup.getUuid());
-    }
 
     /**
      * Reset all profiles, groups, and notification groups to default state

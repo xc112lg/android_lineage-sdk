@@ -94,32 +94,7 @@ public final class ProfileGroup implements Parcelable {
     }
 
     /** @hide */
-    public boolean matches(NotificationGroup group, boolean defaultGroup) {
-        if (mUuid.equals(group.getUuid())) {
-            return true;
-        }
-
-        /* fallback matches for backwards compatibility */
-        boolean matches = false;
-
-        /* fallback attempt 1: match name */
-        if (mName != null && mName.equals(group.getName())) {
-            matches = true;
-        /* fallback attempt 2: match for the 'defaultGroup' flag to match the wildcard group */
-        } else if (mDefaultGroup && defaultGroup) {
-            matches = true;
-        }
-
-        if (!matches) {
-            return false;
-        }
-
-        mName = null;
-        mUuid = group.getUuid();
-        mDirty = true;
-
-        return true;
-    }
+  
 
     public UUID getUuid() {
         return mUuid;
