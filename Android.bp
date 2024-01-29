@@ -59,8 +59,7 @@ java_library {
         lineage_sdk_src + "/**/I*.aidl",
         lineage_sdk_internal_src + "/**/I*.aidl",
 
-        // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     // Include aidl files from lineageos.app namespace as well as internal src aidl files
@@ -83,8 +82,7 @@ java_library {
         lineage_sdk_src + "/**/I*.aidl",
         lineage_sdk_internal_src + "/**/I*.aidl",
 
-        // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     aidl: {
@@ -117,8 +115,7 @@ java_library {
         lineage_sdk_src + "/trust/ITrustInterface.aidl",
         lineage_sdk_src + "/trust/TrustInterface.java",
 
-        // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     // List of apex modules that can link against this lib
