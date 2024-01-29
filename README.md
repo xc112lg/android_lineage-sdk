@@ -2,7 +2,7 @@
 
 The Platform SDK provides a set of APIs that give you easy access to a variety of different features within LineageOS. The SDK exposes APIs and system level framework access in the Android framework that aren't available in any other distribution.
 
-## Settup
+## Setup
 
 You can either [download](https://github.com/LineageOS/android_prebuilts_lineage-sdk/tree/master/current) from prebuilts hosted on github or pull directly via Gradle.
 
