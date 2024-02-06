@@ -34,7 +34,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.app.ActivityManagerNative;
-import android.app.NotificationGroup;
 import android.app.backup.BackupManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -87,14 +86,14 @@ public class ProfileManagerService extends LineageSystemService {
     // Match UUIDs and names, used for reverse compatibility
     private Map<String, UUID> mProfileNames;
 
-    private Map<UUID, NotificationGroup> mGroups;
+
 
     private Profile mActiveProfile;
 
     // Well-known UUID of the wildcard group
     private static final UUID mWildcardUUID =
             UUID.fromString("a126d48a-aaef-47c4-baed-7f0e44aeffe5");
-    private NotificationGroup mWildcardGroup;
+
 
     private Context mContext;
     private Handler mHandler;
@@ -253,10 +252,7 @@ public class ProfileManagerService extends LineageSystemService {
     public void onStart() {
         mBackupManager = new BackupManager(mContext);
 
-        mWildcardGroup = new NotificationGroup(
-                mContext.getString(org.lineageos.platform.internal.R.string.wildcardProfile),
-                org.lineageos.platform.internal.R.string.wildcardProfile,
-                mWildcardUUID);
+
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_LOCALE_CHANGED);
@@ -303,7 +299,6 @@ public class ProfileManagerService extends LineageSystemService {
         mTriggerHelper = new ProfileTriggerHelper(mContext, mHandler, this);
         mProfiles = new HashMap<UUID, Profile>();
         mProfileNames = new HashMap<String, UUID>();
-        mGroups = new HashMap<UUID, NotificationGroup>();
         mEmptyProfile = new Profile("EmptyProfile");
         mDirty = false;
 
@@ -483,78 +478,10 @@ public class ProfileManagerService extends LineageSystemService {
             return false;
         }
 
-        @Override
-        @Deprecated
-        public boolean notificationGroupExistsByName(String notificationGroupName) {
-            for (NotificationGroup group : mGroups.values()) {
-                if (group.getName().equalsIgnoreCase(notificationGroupName)) {
-                    return true;
-                }
-            }
-            return false;
-        }
+       
+       
 
-        @Override
-        public NotificationGroup[] getNotificationGroups() {
-            return mGroups.values().toArray(new NotificationGroup[0]);
-        }
-
-        @Override
-        public void addNotificationGroup(NotificationGroup group) {
-            enforceChangePermissions();
-            addNotificationGroupInternal(group);
-            long token = clearCallingIdentity();
-            persistIfDirty();
-            restoreCallingIdentity(token);
-        }
-
-        @Override
-        public void removeNotificationGroup(NotificationGroup group) {
-            enforceChangePermissions();
-            mDirty |= mGroups.remove(group.getUuid()) != null;
-            // Remove the corresponding ProfileGroup from all the profiles too if
-            // they use it.
-            for (Profile profile : mProfiles.values()) {
-                profile.removeProfileGroup(group.getUuid());
-            }
-            long token = clearCallingIdentity();
-            persistIfDirty();
-            restoreCallingIdentity(token);
-        }
-
-        @Override
-        public void updateNotificationGroup(NotificationGroup group) {
-            enforceChangePermissions();
-            NotificationGroup old = mGroups.get(group.getUuid());
-            if (old == null) {
-                return;
-            }
-
-            mGroups.put(group.getUuid(), group);
-            /* no need to set mDirty, if the group was actually changed,
-             * it's marked as dirty by itself */
-            long token = clearCallingIdentity();
-            persistIfDirty();
-            restoreCallingIdentity(token);
-        }
-
-        @Override
-        public NotificationGroup getNotificationGroupForPackage(String pkg) {
-            for (NotificationGroup group : mGroups.values()) {
-                if (group.hasPackage(pkg)) {
-                    return group;
-                }
-            }
-            return null;
-        }
-
-        @Override
-        public NotificationGroup getNotificationGroup(ParcelUuid uuid) {
-            if (uuid.getUuid().equals(mWildcardGroup.getUuid())) {
-                return mWildcardGroup;
-            }
-            return mGroups.get(uuid.getUuid());
-        }
+      
 
         @Override
         public boolean isEnabled() {
@@ -570,34 +497,8 @@ public class ProfileManagerService extends LineageSystemService {
         }
     };
 
-    private void addProfileInternal(Profile profile) {
-        // Make sure this profile has all of the correct groups.
-        for (NotificationGroup group : mGroups.values()) {
-            ensureGroupInProfile(profile, group, false);
-        }
-        ensureGroupInProfile(profile, mWildcardGroup, true);
-        mProfiles.put(profile.getUuid(), profile);
-        mProfileNames.put(profile.getName(), profile.getUuid());
-        mDirty = true;
-    }
+   
 
-    private void ensureGroupInProfile(Profile profile,
-                                      NotificationGroup group, boolean defaultGroup) {
-        if (profile.getProfileGroup(group.getUuid()) != null) {
-            return;
-        }
-
-        /* enforce a matchup between profile and notification group, which not only
-         * works by UUID, but also by name for backwards compatibility */
-        for (ProfileGroup pg : profile.getProfileGroups()) {
-            if (pg.matches(group, defaultGroup)) {
-                return;
-            }
-        }
-
-        /* didn't find any, create new group */
-        profile.addProfileGroup(new ProfileGroup(group.getUuid(), defaultGroup));
-    }
 
     private Profile getProfileInternal(UUID profileUuid) {
         // use primary UUID first
@@ -620,21 +521,7 @@ public class ProfileManagerService extends LineageSystemService {
         return mProfiles.values();
     }
 
-    private String getXmlString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("<profiles>\n<active>");
-        builder.append(TextUtils.htmlEncode(mActiveProfile.getUuid().toString()));
-        builder.append("</active>\n");
-
-        for (Profile p : mProfiles.values()) {
-            p.getXmlString(builder, mContext);
-        }
-        for (NotificationGroup g : mGroups.values()) {
-            g.getXmlString(builder, mContext);
-        }
-        builder.append("</profiles>\n");
-        return builder.toString();
-    }
+   
 
     private synchronized void persistIfDirty() {
         boolean dirty = mDirty;
@@ -646,14 +533,7 @@ public class ProfileManagerService extends LineageSystemService {
                 }
             }
         }
-        if (!dirty) {
-            for (NotificationGroup group : mGroups.values()) {
-                if (group.isDirty()) {
-                    dirty = true;
-                    break;
-                }
-            }
-        }
+  
         if (dirty) {
             try {
                 Log.d(TAG, "Saving profile data...");
@@ -711,10 +591,7 @@ public class ProfileManagerService extends LineageSystemService {
                     if (active == null) {
                         active = prof.getUuid().toString();
                     }
-                } else if (name.equals("notificationGroup")) {
-                    NotificationGroup ng = NotificationGroup.fromXml(xpp, context);
-                    addNotificationGroupInternal(ng);
-                }
+                } 
             } else if (event == XmlPullParser.END_DOCUMENT) {
                 throw new IOException("Premature end of file while reading " + PROFILE_FILE);
             }
@@ -814,14 +691,5 @@ public class ProfileManagerService extends LineageSystemService {
         }
     }
 
-    private void addNotificationGroupInternal(NotificationGroup group) {
-        if (mGroups.put(group.getUuid(), group) == null) {
-            // If the above is true, then the ProfileGroup shouldn't exist in
-            // the profile. Ensure it is added.
-            for (Profile profile : mProfiles.values()) {
-                ensureGroupInProfile(profile, group, false);
-            }
-        }
-        mDirty = true;
-    }
+
 }

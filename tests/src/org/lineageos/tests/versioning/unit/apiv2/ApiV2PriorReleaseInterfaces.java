@@ -41,13 +41,6 @@ public class ApiV2PriorReleaseInterfaces {
         profilesMap.put("getProfiles", 9);
         profilesMap.put("profileExists", 10);
         profilesMap.put("profileExistsByName", 11);
-        profilesMap.put("notificationGroupExistsByName", 12);
-        profilesMap.put("getNotificationGroups", 13);
-        profilesMap.put("addNotificationGroup", 14);
-        profilesMap.put("removeNotificationGroup", 15);
-        profilesMap.put("updateNotificationGroup", 16);
-        profilesMap.put("getNotificationGroupForPackage", 17);
-        profilesMap.put("getNotificationGroup", 18);
         profilesMap.put("resetAll", 19);
     }
 
