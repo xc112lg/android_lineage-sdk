@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal.common;
+package org.android.platform.internal.common;
 
 import android.content.Context;
-import org.lineageos.platform.internal.LineageSystemService;
+import org.android.platform.internal.LineageSystemService;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

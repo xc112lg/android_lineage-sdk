@@ -30,7 +30,7 @@ public class TrustInterface {
      * security messages to the user.
      * This is a system-only permission, user-installed apps cannot use it
      */
-    public static final String TRUST_INTERFACE_PERMISSION = "lineageos.permission.TRUST_INTERFACE";
+    public static final String TRUST_INTERFACE_PERMISSION = "android.permission.TRUST_INTERFACE";
 
     /**
      * Unable to determine status, an error occured

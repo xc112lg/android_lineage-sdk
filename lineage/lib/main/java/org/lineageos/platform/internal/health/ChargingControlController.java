@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal.health;
+package org.android.platform.internal.health;
 
 import static java.time.format.FormatStyle.SHORT;
 
@@ -38,7 +38,7 @@ import android.os.ServiceManager;
 import android.text.format.DateUtils;
 import android.util.Log;
 
-import org.lineageos.platform.internal.R;
+import org.android.platform.internal.R;
 
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -714,7 +714,7 @@ public class ChargingControlController extends LineageHealthFeature {
 
         private static final int CHARGING_CONTROL_NOTIFICATION_ID = 1000;
         private static final String ACTION_CHARGING_CONTROL_CANCEL_ONCE =
-                "lineageos.platform.intent.action.CHARGING_CONTROL_CANCEL_ONCE";
+                "android.platform.intent.action.CHARGING_CONTROL_CANCEL_ONCE";
         private static final String CHARGING_CONTROL_CHANNEL_ID = "LineageHealthChargingControl";
 
         private boolean mIsDoneNotification = false;

@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-import lineageos.platform.Manifest;
+import android.platform.Manifest;
 
 import static lineageos.preference.RemotePreference.ACTION_REFRESH_PREFERENCE;
 import static lineageos.preference.RemotePreference.ACTION_UPDATE_PREFERENCE;

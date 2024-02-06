@@ -14,23 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal.display;
+package org.android.platform.internal.display;
 
 import android.content.Context;
 import android.hardware.display.ColorDisplayManager;
 import android.os.Handler;
 import android.util.Log;
 
-import org.lineageos.platform.internal.LineageBaseFeature;
-import org.lineageos.platform.internal.display.LiveDisplayService.State;
-import org.lineageos.platform.internal.display.TwilightTracker.TwilightState;
+import org.android.platform.internal.LineageBaseFeature;
+import org.android.platform.internal.display.LiveDisplayService.State;
+import org.android.platform.internal.display.TwilightTracker.TwilightState;
 
 import java.util.BitSet;
 
-import static org.lineageos.platform.internal.display.LiveDisplayService.ALL_CHANGED;
-import static org.lineageos.platform.internal.display.LiveDisplayService.DISPLAY_CHANGED;
-import static org.lineageos.platform.internal.display.LiveDisplayService.MODE_CHANGED;
-import static org.lineageos.platform.internal.display.LiveDisplayService.TWILIGHT_CHANGED;
+import static org.android.platform.internal.display.LiveDisplayService.ALL_CHANGED;
+import static org.android.platform.internal.display.LiveDisplayService.DISPLAY_CHANGED;
+import static org.android.platform.internal.display.LiveDisplayService.MODE_CHANGED;
+import static org.android.platform.internal.display.LiveDisplayService.TWILIGHT_CHANGED;
 
 public abstract class LiveDisplayFeature extends LineageBaseFeature {
 

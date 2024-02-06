@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal;
+package org.android.platform.internal;
 
 import android.content.Context;
 import android.content.Intent;
@@ -189,7 +189,7 @@ public class LineageHardwareService extends LineageSystemService {
             Intent intent = new Intent(lineageos.content.Intent.ACTION_INITIALIZE_LINEAGE_HARDWARE);
             intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
             mContext.sendBroadcastAsUser(intent, UserHandle.ALL,
-                    lineageos.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS);
+                    android.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS);
         }
     }
 
@@ -207,14 +207,14 @@ public class LineageHardwareService extends LineageSystemService {
         @Override
         public int getSupportedFeatures() {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    android.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             return mLineageHwImpl.getSupportedFeatures();
         }
 
         @Override
         public boolean get(int feature) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    android.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (!isSupported(feature)) {
                 Log.e(TAG, "feature " + feature + " is not supported");
                 return false;
@@ -225,7 +225,7 @@ public class LineageHardwareService extends LineageSystemService {
         @Override
         public boolean set(int feature, boolean enable) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    android.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (!isSupported(feature)) {
                 Log.e(TAG, "feature " + feature + " is not supported");
                 return false;
@@ -236,7 +236,7 @@ public class LineageHardwareService extends LineageSystemService {
         @Override
         public int[] getDisplayColorCalibration() {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    android.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (!isSupported(LineageHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION)) {
                 Log.e(TAG, "Display color calibration is not supported");
                 return null;
@@ -247,7 +247,7 @@ public class LineageHardwareService extends LineageSystemService {
         @Override
         public boolean setDisplayColorCalibration(int[] rgb) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+                    android.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
             if (!isSupported(LineageHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION)) {
                 Log.e(TAG, "Display color calibration is not supported");
                 return false;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal.display;
+package org.android.platform.internal.display;
 
 import android.text.format.DateUtils;
 import android.util.FloatMath;

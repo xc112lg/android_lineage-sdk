@@ -41,7 +41,7 @@ public class LongScreen {
         final Resources resources = mContext.getResources();
 
         mLongScreenAvailable = resources.getBoolean(
-                org.lineageos.platform.internal.R.bool.config_haveHigherAspectRatioScreen);
+                org.android.platform.internal.R.bool.config_haveHigherAspectRatioScreen);
 
         if (!mLongScreenAvailable) {
             return;

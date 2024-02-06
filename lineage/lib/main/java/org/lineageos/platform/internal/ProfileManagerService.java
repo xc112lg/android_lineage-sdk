@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal;
+package org.android.platform.internal;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -254,8 +254,8 @@ public class ProfileManagerService extends LineageSystemService {
         mBackupManager = new BackupManager(mContext);
 
         mWildcardGroup = new NotificationGroup(
-                mContext.getString(org.lineageos.platform.internal.R.string.wildcardProfile),
-                org.lineageos.platform.internal.R.string.wildcardProfile,
+                mContext.getString(org.android.platform.internal.R.string.wildcardProfile),
+                org.android.platform.internal.R.string.wildcardProfile,
                 mWildcardUUID);
 
         IntentFilter filter = new IntentFilter();
@@ -671,7 +671,7 @@ public class ProfileManagerService extends LineageSystemService {
 
     private void enforceChangePermissions() {
         mContext.enforceCallingOrSelfPermission(
-                lineageos.platform.Manifest.permission.MODIFY_PROFILES,
+                android.platform.Manifest.permission.MODIFY_PROFILES,
                 "You do not have permissions to change the Profile Manager.");
     }
 
@@ -740,7 +740,7 @@ public class ProfileManagerService extends LineageSystemService {
 
     private void initialiseStructure() throws XmlPullParserException, IOException {
         XmlResourceParser xml = mContext.getResources().getXml(
-                org.lineageos.platform.internal.R.xml.profile_default);
+                org.android.platform.internal.R.xml.profile_default);
         try {
             loadXml(xml, mContext);
             mDirty = true;

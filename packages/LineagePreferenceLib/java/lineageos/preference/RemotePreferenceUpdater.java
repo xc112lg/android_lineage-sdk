@@ -25,7 +25,7 @@ import android.util.Log;
 
 import java.util.Objects;
 
-import lineageos.platform.Manifest;
+import android.platform.Manifest;
 
 /**
  * Base class for remote summary providers.

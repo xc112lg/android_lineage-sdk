@@ -34,7 +34,7 @@ import android.os.UserHandle;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.lineageos.platform.internal.R;
+import org.android.platform.internal.R;
 
 import java.util.List;
 
@@ -113,8 +113,8 @@ public class ActionUtils {
         final String packageName = lastTask.baseIntent.getComponent().getPackageName();
         final IActivityManager am = ActivityManagerNative.getDefault();
         final ActivityOptions opts = ActivityOptions.makeCustomAnimation(context,
-                org.lineageos.platform.internal.R.anim.last_app_in,
-                org.lineageos.platform.internal.R.anim.last_app_out);
+                org.android.platform.internal.R.anim.last_app_in,
+                org.android.platform.internal.R.anim.last_app_out);
 
         if (DEBUG) Log.d(TAG, "switching to " + packageName);
         am.moveTaskToFront(null, null, lastTask.id,

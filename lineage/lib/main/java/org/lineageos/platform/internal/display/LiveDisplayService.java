@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal.display;
+package org.android.platform.internal.display;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -36,10 +36,10 @@ import android.view.Display;
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
 
-import org.lineageos.platform.internal.LineageSystemService;
-import org.lineageos.platform.internal.common.UserContentObserver;
-import org.lineageos.platform.internal.display.TwilightTracker.TwilightListener;
-import org.lineageos.platform.internal.display.TwilightTracker.TwilightState;
+import org.android.platform.internal.LineageSystemService;
+import org.android.platform.internal.common.UserContentObserver;
+import org.android.platform.internal.display.TwilightTracker.TwilightListener;
+import org.android.platform.internal.display.TwilightTracker.TwilightState;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -175,7 +175,7 @@ public class LiveDisplayService extends LineageSystemService {
 
             // static config
             int defaultMode = mContext.getResources().getInteger(
-                    org.lineageos.platform.internal.R.integer.config_defaultLiveDisplayMode);
+                    org.android.platform.internal.R.integer.config_defaultLiveDisplayMode);
 
             mConfig = new LiveDisplayConfig(capabilities, defaultMode,
                     mCTC.getDefaultDayTemperature(), mCTC.getDefaultNightTemperature(),
@@ -250,7 +250,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setMode(int mode) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             if (!mConfig.hasModeSupport()) {
                 return false;
             }
@@ -265,7 +265,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setColorAdjustment(float[] adj) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             return mDHC.setColorAdjustment(adj);
         }
 
@@ -277,7 +277,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public  boolean setAutoContrastEnabled(boolean enabled) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             return mDHC.setAutoContrastEnabled(enabled);
         }
 
@@ -289,7 +289,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setCABCEnabled(boolean enabled) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             return mDHC.setCABCEnabled(enabled);
         }
 
@@ -301,7 +301,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setColorEnhancementEnabled(boolean enabled) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             return mDHC.setColorEnhancementEnabled(enabled);
         }
 
@@ -313,7 +313,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setAutomaticOutdoorModeEnabled(boolean enabled) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             return mOMC.setAutomaticOutdoorModeEnabled(enabled);
         }
 
@@ -325,7 +325,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setDayColorTemperature(int temperature) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             mCTC.setDayColorTemperature(temperature);
             return true;
         }
@@ -338,7 +338,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setNightColorTemperature(int temperature) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             mCTC.setNightColorTemperature(temperature);
             return true;
         }
@@ -386,7 +386,7 @@ public class LiveDisplayService extends LineageSystemService {
         @Override
         public boolean setAntiFlickerEnabled(boolean enabled) {
             mContext.enforceCallingOrSelfPermission(
-                    lineageos.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+                    android.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
             return mDHC.setAntiFlickerEnabled(enabled);
         }
     };
@@ -549,13 +549,13 @@ public class LiveDisplayService extends LineageSystemService {
                     PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
             Notification.Builder builder = new Notification.Builder(mContext)
                     .setContentTitle(mContext.getResources().getString(
-                            org.lineageos.platform.internal.R.string.live_display_title))
+                            org.android.platform.internal.R.string.live_display_title))
                     .setContentText(mContext.getResources().getString(
-                            org.lineageos.platform.internal.R.string.live_display_hint))
-                    .setSmallIcon(org.lineageos.platform.internal.R.drawable.ic_livedisplay_notif)
+                            org.android.platform.internal.R.string.live_display_hint))
+                    .setSmallIcon(org.android.platform.internal.R.drawable.ic_livedisplay_notif)
                     .setStyle(new Notification.BigTextStyle().bigText(mContext.getResources()
                              .getString(
-                                     org.lineageos.platform.internal.R.string.live_display_hint)))
+                                     org.android.platform.internal.R.string.live_display_hint)))
                     .setContentIntent(result)
                     .setAutoCancel(true);
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal.health;
+package org.android.platform.internal.health;
 
 import android.Manifest;
 import android.content.Context;
@@ -25,7 +25,7 @@ import android.util.Log;
 
 import com.android.server.ServiceThread;
 
-import org.lineageos.platform.internal.LineageSystemService;
+import org.android.platform.internal.LineageSystemService;
 
 import lineageos.app.LineageContextConstants;
 import lineageos.health.IHealthInterface;

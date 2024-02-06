@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal;
+package org.android.platform.internal;
 
 import static lineageos.providers.LineageSettings.Secure.POWER_MENU_ACTIONS;
 import static lineageos.providers.LineageSettings.Secure.getStringForUser;

@@ -217,7 +217,7 @@ public final class LineageHardwareManager {
         }
 
         final String[] mappings = mContext.getResources().getStringArray(
-                org.lineageos.platform.internal.R.array.config_displayModeMappings);
+                org.android.platform.internal.R.array.config_displayModeMappings);
         if (mappings != null && mappings.length > 0) {
             for (String mapping : mappings) {
                 String[] split = mapping.split(":");
@@ -227,7 +227,7 @@ public final class LineageHardwareManager {
             }
         }
         mFilterDisplayModes = mContext.getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_filterDisplayModes);
+                org.android.platform.internal.R.bool.config_filterDisplayModes);
     }
 
     /**

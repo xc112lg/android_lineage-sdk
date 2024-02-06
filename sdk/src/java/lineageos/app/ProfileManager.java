@@ -66,7 +66,7 @@ public class ProfileManager {
      * or by calls to the ProfileManagerService / Profile.</p>
      */
     public static final String INTENT_ACTION_PROFILE_SELECTED =
-            "lineageos.platform.intent.action.PROFILE_SELECTED";
+            "android.platform.intent.action.PROFILE_SELECTED";
 
     /**
      * <p>Broadcast Action: Current profile has been updated. This is triggered every time the
@@ -75,14 +75,14 @@ public class ProfileManager {
      * trigger a profile selection, but causes its name to change.</p>
      */
     public static final String INTENT_ACTION_PROFILE_UPDATED =
-            "lineageos.platform.intent.action.PROFILE_UPDATED";
+            "android.platform.intent.action.PROFILE_UPDATED";
 
 
     /**
      * @hide
      */
     public static final String INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED =
-            "lineageos.platform.intent.action.INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED";
+            "android.platform.intent.action.INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED";
 
     /**
      * @hide
@@ -134,7 +134,7 @@ public class ProfileManager {
      */
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String ACTION_PROFILE_PICKER =
-            "lineageos.platform.intent.action.PROFILE_PICKER";
+            "android.platform.intent.action.PROFILE_PICKER";
 
     /**
      * Constant for NO_PROFILE
@@ -150,7 +150,7 @@ public class ProfileManager {
      * @see #ACTION_PROFILE_PICKER
      */
     public static final String EXTRA_PROFILE_SHOW_NONE =
-            "lineageos.platform.intent.extra.profile.SHOW_NONE";
+            "android.platform.intent.extra.profile.SHOW_NONE";
 
     /**
      * Given to the profile picker as a {@link UUID} string representation. The {@link UUID}
@@ -162,7 +162,7 @@ public class ProfileManager {
      * @see #ACTION_PROFILE_PICKER
      */
     public static final String EXTRA_PROFILE_EXISTING_UUID =
-            "lineageos.platform.extra.profile.EXISTING_UUID";
+            "android.platform.extra.profile.EXISTING_UUID";
 
     /**
      * Given to the profile picker as a {@link CharSequence}. The title to
@@ -172,7 +172,7 @@ public class ProfileManager {
      * @see #ACTION_PROFILE_PICKER
      */
     public static final String EXTRA_PROFILE_TITLE =
-            "lineageos.platform.intent.extra.profile.TITLE";
+            "android.platform.intent.extra.profile.TITLE";
 
     /**
      * Returned from the profile picker as a {@link UUID} string representation.
@@ -184,7 +184,7 @@ public class ProfileManager {
      * @see #ACTION_PROFILE_PICKER
      */
     public static final String EXTRA_PROFILE_PICKED_UUID =
-            "lineageos.platform.intent.extra.profile.PICKED_UUID";
+            "android.platform.intent.extra.profile.PICKED_UUID";
 
     /**
      * Broadcast intent action indicating that Profiles has been enabled or disabled.
@@ -194,7 +194,7 @@ public class ProfileManager {
      */
     @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String PROFILES_STATE_CHANGED_ACTION =
-        "lineageos.platform.app.profiles.PROFILES_STATE_CHANGED";
+        "android.platform.app.profiles.PROFILES_STATE_CHANGED";
 
     /**
      * The lookup key for an int that indicates whether Profiles are enabled or
@@ -212,7 +212,7 @@ public class ProfileManager {
      * @see #ACTION_PROFILE_PICKER
      */
     public static final String EXTRA_PROFILE_DIALOG_THEME =
-            "lineageos.platform.intent.extra.profile.DIALOG_THEME";
+            "android.platform.intent.extra.profile.DIALOG_THEME";
 
     /**
      * Profiles are disabled.

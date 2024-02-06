@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal.display;
+package org.android.platform.internal.display;
 
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
@@ -27,7 +27,7 @@ import android.util.Range;
 import android.util.Slog;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-import org.lineageos.platform.internal.display.TwilightTracker.TwilightState;
+import org.android.platform.internal.display.TwilightTracker.TwilightState;
 
 import java.io.PrintWriter;
 import java.util.BitSet;
@@ -85,15 +85,15 @@ public class ColorTemperatureController extends LiveDisplayFeature {
                 (mUseColorBalance || mDisplayHardware.hasColorAdjustment());
 
         mDefaultDayTemperature = mContext.getResources().getInteger(
-                org.lineageos.platform.internal.R.integer.config_dayColorTemperature);
+                org.android.platform.internal.R.integer.config_dayColorTemperature);
         mDefaultNightTemperature = mContext.getResources().getInteger(
-                org.lineageos.platform.internal.R.integer.config_nightColorTemperature);
+                org.android.platform.internal.R.integer.config_nightColorTemperature);
 
         mColorTemperatureRange = Range.create(
                 mContext.getResources().getInteger(
-                        org.lineageos.platform.internal.R.integer.config_minColorTemperature),
+                        org.android.platform.internal.R.integer.config_minColorTemperature),
                 mContext.getResources().getInteger(
-                        org.lineageos.platform.internal.R.integer.config_maxColorTemperature));
+                        org.android.platform.internal.R.integer.config_maxColorTemperature));
 
         mColorBalanceCurve = org.lineageos.internal.util.MathUtils.powerCurve(
                 mColorTemperatureRange.getLower(),

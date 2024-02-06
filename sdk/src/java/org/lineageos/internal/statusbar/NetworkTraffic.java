@@ -43,7 +43,7 @@ import android.widget.TextView;
 
 import lineageos.providers.LineageSettings;
 
-import org.lineageos.platform.internal.R;
+import org.android.platform.internal.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

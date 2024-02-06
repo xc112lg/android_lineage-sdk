@@ -109,7 +109,7 @@ public final class LineageNotificationLights {
 
         mPackageNameMappings = new ArrayMap<String, String>();
         final String[] defaultMapping = res.getStringArray(
-                org.lineageos.platform.internal.R.array.notification_light_package_mapping);
+                org.android.platform.internal.R.array.notification_light_package_mapping);
         for (String mapping : defaultMapping) {
             String[] map = mapping.split("\\|");
             mPackageNameMappings.put(map[0], map[1]);

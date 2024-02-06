@@ -33,6 +33,6 @@ android_test {
 
     static_libs: [
         "androidx.test.rules",
-        "org.lineageos.platform.internal",
+        "org.android.platform.internal",
     ],
 }

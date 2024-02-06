@@ -284,7 +284,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
 
         if (upgradeVersion < 18) {
             Integer defaultValue = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock)
+                    org.android.platform.internal.R.bool.config_fingerprintWakeAndUnlock)
                     ? 1 : 0; // Reversed since they're reversed again below
 
             // Used to be LineageSettings.System.FINGERPRINT_WAKE_UNLOCK
@@ -308,7 +308,7 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
         if (upgradeVersion < 19) {
             // Set default value based on config_fingerprintWakeAndUnlock
             boolean fingerprintWakeAndUnlock = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
+                    org.android.platform.internal.R.bool.config_fingerprintWakeAndUnlock);
             // Previously Settings.Secure.SFPS_REQUIRE_SCREEN_ON_TO_AUTH_ENABLED
             Integer oldSetting = Settings.Secure.getInt(mContext.getContentResolver(),
                     "sfps_require_screen_on_to_auth_enabled", fingerprintWakeAndUnlock ? 0 : 1);

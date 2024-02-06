@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal.display;
+package org.android.platform.internal.display;
 
 import static lineageos.hardware.LiveDisplayManager.MODE_AUTO;
 import static lineageos.hardware.LiveDisplayManager.MODE_DAY;
@@ -58,11 +58,11 @@ public class OutdoorModeController extends LiveDisplayFeature {
         mUseOutdoorMode = mHardware.isSupported(LineageHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT);
 
         mDefaultOutdoorLux = mContext.getResources().getInteger(
-                org.lineageos.platform.internal.R.integer.config_outdoorAmbientLux);
+                org.android.platform.internal.R.integer.config_outdoorAmbientLux);
         mOutdoorLuxHysteresis = mContext.getResources().getInteger(
-                org.lineageos.platform.internal.R.integer.config_outdoorAmbientLuxHysteresis);
+                org.android.platform.internal.R.integer.config_outdoorAmbientLuxHysteresis);
         mDefaultAutoOutdoorMode = mContext.getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_defaultAutoOutdoorMode);
+                org.android.platform.internal.R.bool.config_defaultAutoOutdoorMode);
     }
 
     @Override

@@ -1085,7 +1085,7 @@ public final class Profile implements Parcelable, Comparable {
 
         if (value != null) {
             profileNameResId = context.getResources().getIdentifier(value, "string",
-                    "lineageos.platform");
+                    "android.platform");
             if (profileNameResId > 0) {
                 profileName = context.getResources().getString(profileNameResId);
             }

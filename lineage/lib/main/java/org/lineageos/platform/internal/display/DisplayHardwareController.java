@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.platform.internal.display;
+package org.android.platform.internal.display;
 
 import android.animation.FloatArrayEvaluator;
 import android.animation.ValueAnimator;
@@ -87,17 +87,17 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         mUseCABC = mHardware
                 .isSupported(LineageHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT);
         mDefaultCABC = mContext.getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_defaultCABC);
+                org.android.platform.internal.R.bool.config_defaultCABC);
 
         mUseColorEnhancement = mHardware
                 .isSupported(LineageHardwareManager.FEATURE_COLOR_ENHANCEMENT);
         mDefaultColorEnhancement = mContext.getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_defaultColorEnhancement);
+                org.android.platform.internal.R.bool.config_defaultColorEnhancement);
 
         mUseAutoContrast = mHardware
                 .isSupported(LineageHardwareManager.FEATURE_AUTO_CONTRAST);
         mDefaultAutoContrast = mContext.getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_defaultAutoContrast);
+                org.android.platform.internal.R.bool.config_defaultAutoContrast);
 
         mUseColorAdjustment = mHardware
                 .isSupported(LineageHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION);
@@ -111,7 +111,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         mUseAntiFlicker = mHardware
                 .isSupported(LineageHardwareManager.FEATURE_ANTI_FLICKER);
         mDefaultAntiFlicker = mContext.getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_defaultAntiFlicker);
+                org.android.platform.internal.R.bool.config_defaultAntiFlicker);
 
         if (mUseColorAdjustment) {
             mMaxColor = mHardware.getDisplayColorCalibrationMax();

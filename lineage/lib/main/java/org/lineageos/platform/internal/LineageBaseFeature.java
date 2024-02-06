@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.platform.internal;
+package org.android.platform.internal;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -22,7 +22,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.UserHandle;
 
-import org.lineageos.platform.internal.common.UserContentObserver;
+import org.android.platform.internal.common.UserContentObserver;
 
 import java.io.PrintWriter;
 

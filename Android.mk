@@ -26,22 +26,22 @@ include $(CLEAR_VARS)
 # did, the PRIVATE_* vars for R.java wouldn't be guaranteed to be correct.
 # Instead, it depends on the R.stamp file, which lists the corresponding
 # R.java file as a prerequisite.
-lineage_platform_res := APPS/org.lineageos.platform-res_intermediates/aapt
+lineage_platform_res := APPS/org.android.platform-res_intermediates/aapt
 
 # List of packages used in lineage-api-stubs
-lineage_stub_packages := lineageos.app:lineageos.content:lineageos.hardware:lineageos.media:lineageos.os:lineageos.preference:lineageos.profiles:lineageos.providers:lineageos.platform:lineageos.util:lineageos.trust
+lineage_stub_packages := lineageos.app:lineageos.content:lineageos.hardware:lineageos.media:lineageos.os:lineageos.preference:lineageos.profiles:lineageos.providers:android.platform:lineageos.util:lineageos.trust
 
 lineage_framework_module := $(LOCAL_INSTALLED_MODULE)
 
 # Make sure that R.java and Manifest.java are built before we build
 # the source for this library.
 lineage_framework_res_R_stamp := \
-    $(call intermediates-dir-for,APPS,org.lineageos.platform-res,,COMMON)/src/R.stamp
+    $(call intermediates-dir-for,APPS,org.android.platform-res,,COMMON)/src/R.stamp
 LOCAL_ADDITIONAL_DEPENDENCIES := $(lineage_framework_res_R_stamp)
 
-$(lineage_framework_module): | $(dir $(lineage_framework_module))org.lineageos.platform-res.apk
+$(lineage_framework_module): | $(dir $(lineage_framework_module))org.android.platform-res.apk
 
-lineage_framework_built := $(call java-lib-deps, org.lineageos.platform)
+lineage_framework_built := $(call java-lib-deps, org.android.platform)
 
 # ===========================================================
 # Common Droiddoc vars
@@ -50,7 +50,7 @@ lineage_platform_docs_src_files := \
     $(call all-html-files-under, $(lineage_sdk_src))
 
 lineage_platform_docs_java_libraries := \
-    org.lineageos.platform.sdk
+    org.android.platform.sdk
 
 # SDK version as defined
 lineage_platform_docs_SDK_VERSION := 15.1
@@ -64,7 +64,7 @@ lineage_platform_docs_LOCAL_DROIDDOC_SOURCE_PATH := \
     $(lineage_platform_docs_src_files)
 
 lineage_platform_docs_LOCAL_ADDITIONAL_JAVA_DIR := \
-    $(call intermediates-dir-for,JAVA_LIBRARIES,org.lineageos.platform.sdk,,COMMON)
+    $(call intermediates-dir-for,JAVA_LIBRARIES,org.android.platform.sdk,,COMMON)
 
 # ====  the api stubs and current.xml ===========================
 include $(CLEAR_VARS)
@@ -87,7 +87,7 @@ LOCAL_DROIDDOC_STUB_OUT_DIR := $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES
 LOCAL_DROIDDOC_OPTIONS:= \
         -referenceonly \
         -stubpackages $(lineage_stub_packages) \
-        -exclude org.lineageos.platform.internal \
+        -exclude org.android.platform.internal \
         -api $(INTERNAL_LINEAGE_PLATFORM_API_FILE) \
         -removedApi $(INTERNAL_LINEAGE_PLATFORM_REMOVED_API_FILE) \
         -nodocs
@@ -106,7 +106,7 @@ $(call dist-for-goals,sdk,$(INTERNAL_LINEAGE_PLATFORM_API_FILE))
 # ===========================================================
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := org.lineageos.platform.sdk
+LOCAL_MODULE := org.android.platform.sdk
 LOCAL_INTERMEDIATE_SOURCES:= $(lineage_platform_LOCAL_INTERMEDIATE_SOURCES)
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE_TAGS := optional
@@ -124,8 +124,8 @@ LOCAL_JAVA_LIBRARIES := $(lineage_platform_docs_java_libraries)
 LOCAL_DROIDDOC_OPTIONS := \
         -android \
         -offlinemode \
-        -exclude org.lineageos.platform.internal \
-        -hidePackage org.lineageos.platform.internal \
+        -exclude org.android.platform.internal \
+        -hidePackage org.android.platform.internal \
         -hdf android.whichdoc offline \
         -hdf sdk.version $(lineage_platform_docs_docs_SDK_VERSION) \
         -hdf sdk.rel.id $(lineage_platform_docs_docs_SDK_REL_ID) \
