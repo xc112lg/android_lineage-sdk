@@ -14,19 +14,7 @@
 // limitations under the License.
 //
 
-android_app {
-    name: "org.lineageos.platform-res",
-    sdk_version: "core_platform",
-    certificate: "platform",
 
-    manifest: "lineage/res/AndroidManifest.xml",
-
-    // Disable dexpreopt and verify_uses_libraries check as the app
-    // contains no Java code to be dexpreopted.
-    enforce_uses_libs: false,
-    dex_preopt: {
-        enabled: false,
-    },
 
     // Soong special-cases org.lineageos.platform-res to install this alongside
     // the libraries at /system_ext/framework/org.lineageos.platform-res.apk.
@@ -103,7 +91,7 @@ java_library {
         lineage_sdk_internal_src + "/**/I*.aidl",
 
         // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     // Include aidl files from lineageos.app namespace as well as internal src aidl files
@@ -127,7 +115,7 @@ java_library {
         lineage_sdk_internal_src + "/**/I*.aidl",
 
         // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     aidl: {
@@ -143,7 +131,7 @@ java_library {
 
     srcs: [
         // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     sdk_version: "core_current",
@@ -164,7 +152,7 @@ java_library {
         lineage_sdk_src + "/**/I*.aidl",
 
         // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     aidl: {
@@ -187,7 +175,7 @@ java_library {
         lineage_sdk_src + "/trust/TrustInterface.java",
 
         // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
+
     ],
 
     // List of apex modules that can link against this lib
