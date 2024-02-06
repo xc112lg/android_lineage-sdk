@@ -17,7 +17,7 @@
 package lineageos.app;
 
 import android.app.Notification;
-import android.app.NotificationGroup;
+
 
 import android.content.Context;
 import android.database.Cursor;
@@ -94,7 +94,7 @@ public final class ProfileGroup implements Parcelable {
     }
 
     /** @hide */
-    public boolean matches(NotificationGroup group, boolean defaultGroup) {
+    public boolean matches( boolean defaultGroup) {
         if (mUuid.equals(group.getUuid())) {
             return true;
         }
