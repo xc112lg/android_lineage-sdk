@@ -32,7 +32,7 @@ public class Intent {
      * @hide
      */
     public static final String ACTION_RECENTS_LONG_PRESS =
-            "lineageos.intent.action.RECENTS_LONG_PRESS";
+            "android.intent.action.RECENTS_LONG_PRESS";
 
     /**
      * This field is part of the intent {@link #ACTION_RECENTS_LONG_PRESS}.
@@ -41,7 +41,7 @@ public class Intent {
      * @hide
      */
     public static final String EXTRA_RECENTS_LONG_PRESS_RELEASE =
-            "lineageos.intent.extra.RECENTS_LONG_PRESS_RELEASE";
+            "android.intent.extra.RECENTS_LONG_PRESS_RELEASE";
 
     /**
      * Broadcast action: notify the system that the user has performed a gesture on the screen
@@ -50,7 +50,7 @@ public class Intent {
      * @hide
      */
     public static final String ACTION_SCREEN_CAMERA_GESTURE =
-            "lineageos.intent.action.SCREEN_CAMERA_GESTURE";
+            "android.intent.action.SCREEN_CAMERA_GESTURE";
 
     /**
      * Broadcast action: perform any initialization required for LineageHW services.
@@ -61,14 +61,14 @@ public class Intent {
      * @hide
      */
     public static final String ACTION_INITIALIZE_LINEAGE_HARDWARE =
-            "lineageos.intent.action.INITIALIZE_LINEAGE_HARDWARE";
+            "android.intent.action.INITIALIZE_LINEAGE_HARDWARE";
 
     /**
      * Broadcast action: lid state changed
      * @hide
      */
     public static final String ACTION_LID_STATE_CHANGED =
-            "lineageos.intent.action.LID_STATE_CHANGED";
+            "android.intent.action.LID_STATE_CHANGED";
 
     /**
      * This field is part of the intent {@link #ACTION_LID_STATE_CHANGED}.
@@ -76,7 +76,7 @@ public class Intent {
      * @hide
      */
     public static final String EXTRA_LID_STATE =
-            "lineageos.intent.extra.LID_STATE";
+            "android.intent.extra.LID_STATE";
 
     /**
      * Broadcast Action: Update preferences for the power menu dialog. This is to provide a
@@ -87,12 +87,12 @@ public class Intent {
      *@hide
      */
     public static final String ACTION_UPDATE_POWER_MENU =
-            "lineageos.intent.action.UPDATE_POWER_MENU";
+            "android.intent.action.UPDATE_POWER_MENU";
 
     /**
      * Broadcast action: notify SystemUI that LiveDisplay service has finished initialization.
      * @hide
      */
     public static final String ACTION_INITIALIZE_LIVEDISPLAY =
-            "lineageos.intent.action.INITIALIZE_LIVEDISPLAY";
+            "android.intent.action.INITIALIZE_LIVEDISPLAY";
 }

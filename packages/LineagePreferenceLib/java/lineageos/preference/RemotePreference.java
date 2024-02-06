@@ -65,10 +65,10 @@ public class RemotePreference extends SelfRemovingPreference
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
 
     public static final String ACTION_REFRESH_PREFERENCE =
-            "lineageos.intent.action.REFRESH_PREFERENCE";
+            "android.intent.action.REFRESH_PREFERENCE";
 
     public static final String ACTION_UPDATE_PREFERENCE =
-            "lineageos.intent.action.UPDATE_PREFERENCE";
+            "android.intent.action.UPDATE_PREFERENCE";
 
     public static final String META_REMOTE_RECEIVER =
             "org.lineageos.settings.summary.receiver";

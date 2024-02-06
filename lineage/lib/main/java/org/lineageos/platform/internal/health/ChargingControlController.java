@@ -714,7 +714,7 @@ public class ChargingControlController extends LineageHealthFeature {
 
         private static final int CHARGING_CONTROL_NOTIFICATION_ID = 1000;
         private static final String ACTION_CHARGING_CONTROL_CANCEL_ONCE =
-                "lineageos.platform.intent.action.CHARGING_CONTROL_CANCEL_ONCE";
+                "android.platform.intent.action.CHARGING_CONTROL_CANCEL_ONCE";
         private static final String CHARGING_CONTROL_CHANNEL_ID = "LineageHealthChargingControl";
 
         private boolean mIsDoneNotification = false;

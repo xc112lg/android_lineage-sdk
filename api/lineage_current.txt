@@ -104,19 +104,19 @@ package lineageos.app {
     method public void resetAll();
     method public void setActiveProfile(java.util.UUID);
     method public void updateProfile(lineageos.app.Profile);
-    field public static final java.lang.String ACTION_PROFILE_PICKER = "lineageos.platform.intent.action.PROFILE_PICKER";
+    field public static final java.lang.String ACTION_PROFILE_PICKER = "android.platform.intent.action.PROFILE_PICKER";
     field public static final java.lang.String EXTRA_LAST_PROFILE_NAME = "lastName";
     field public static final java.lang.String EXTRA_LAST_PROFILE_UUID = "lastUuid";
     field public static final java.lang.String EXTRA_PROFILES_STATE = "profile_state";
-    field public static final java.lang.String EXTRA_PROFILE_DIALOG_THEME = "lineageos.platform.intent.extra.profile.DIALOG_THEME";
+    field public static final java.lang.String EXTRA_PROFILE_DIALOG_THEME = "android.platform.intent.extra.profile.DIALOG_THEME";
     field public static final java.lang.String EXTRA_PROFILE_EXISTING_UUID = "lineageos.platform.extra.profile.EXISTING_UUID";
     field public static final java.lang.String EXTRA_PROFILE_NAME = "name";
-    field public static final java.lang.String EXTRA_PROFILE_PICKED_UUID = "lineageos.platform.intent.extra.profile.PICKED_UUID";
-    field public static final java.lang.String EXTRA_PROFILE_SHOW_NONE = "lineageos.platform.intent.extra.profile.SHOW_NONE";
-    field public static final java.lang.String EXTRA_PROFILE_TITLE = "lineageos.platform.intent.extra.profile.TITLE";
+    field public static final java.lang.String EXTRA_PROFILE_PICKED_UUID = "android.platform.intent.extra.profile.PICKED_UUID";
+    field public static final java.lang.String EXTRA_PROFILE_SHOW_NONE = "android.platform.intent.extra.profile.SHOW_NONE";
+    field public static final java.lang.String EXTRA_PROFILE_TITLE = "android.platform.intent.extra.profile.TITLE";
     field public static final java.lang.String EXTRA_PROFILE_UUID = "uuid";
-    field public static final java.lang.String INTENT_ACTION_PROFILE_SELECTED = "lineageos.platform.intent.action.PROFILE_SELECTED";
-    field public static final java.lang.String INTENT_ACTION_PROFILE_UPDATED = "lineageos.platform.intent.action.PROFILE_UPDATED";
+    field public static final java.lang.String INTENT_ACTION_PROFILE_SELECTED = "android.platform.intent.action.PROFILE_SELECTED";
+    field public static final java.lang.String INTENT_ACTION_PROFILE_UPDATED = "android.platform.intent.action.PROFILE_UPDATED";
     field public static final java.util.UUID NO_PROFILE;
     field public static final java.lang.String PROFILES_STATE_CHANGED_ACTION = "lineageos.platform.app.profiles.PROFILES_STATE_CHANGED";
     field public static final int PROFILES_STATE_DISABLED = 0; // 0x0
@@ -336,13 +336,13 @@ package lineageos.platform {
 
   public static final class Manifest.permission {
     ctor public Manifest.permission();
-    field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "lineageos.permission.HARDWARE_ABSTRACTION_ACCESS";
-    field public static final java.lang.String MANAGE_LIVEDISPLAY = "lineageos.permission.MANAGE_LIVEDISPLAY";
-    field public static final java.lang.String MANAGE_REMOTE_PREFERENCES = "lineageos.permission.MANAGE_REMOTE_PREFERENCES";
-    field public static final java.lang.String MODIFY_PROFILES = "lineageos.permission.MODIFY_PROFILES";
-    field public static final java.lang.String TRUST_INTERFACE = "lineageos.permission.TRUST_INTERFACE";
-    field public static final java.lang.String WRITE_SECURE_SETTINGS = "lineageos.permission.WRITE_SECURE_SETTINGS";
-    field public static final java.lang.String WRITE_SETTINGS = "lineageos.permission.WRITE_SETTINGS";
+    field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "android.permission.HARDWARE_ABSTRACTION_ACCESS";
+    field public static final java.lang.String MANAGE_LIVEDISPLAY = "android.permission.MANAGE_LIVEDISPLAY";
+    field public static final java.lang.String MANAGE_REMOTE_PREFERENCES = "android.permission.MANAGE_REMOTE_PREFERENCES";
+    field public static final java.lang.String MODIFY_PROFILES = "android.permission.MODIFY_PROFILES";
+    field public static final java.lang.String TRUST_INTERFACE = "android.permission.TRUST_INTERFACE";
+    field public static final java.lang.String WRITE_SECURE_SETTINGS = "android.permission.WRITE_SECURE_SETTINGS";
+    field public static final java.lang.String WRITE_SETTINGS = "android.permission.WRITE_SETTINGS";
   }
 
   public final class R {
@@ -458,8 +458,8 @@ package lineageos.preference {
     method public android.content.Intent getReceiverIntent();
     method protected java.lang.String getRemoteKey(android.os.Bundle);
     method public void onRemoteUpdated(android.os.Bundle);
-    field public static final java.lang.String ACTION_REFRESH_PREFERENCE = "lineageos.intent.action.REFRESH_PREFERENCE";
-    field public static final java.lang.String ACTION_UPDATE_PREFERENCE = "lineageos.intent.action.UPDATE_PREFERENCE";
+    field public static final java.lang.String ACTION_REFRESH_PREFERENCE = "android.intent.action.REFRESH_PREFERENCE";
+    field public static final java.lang.String ACTION_UPDATE_PREFERENCE = "android.intent.action.UPDATE_PREFERENCE";
     field public static final java.lang.String EXTRA_ENABLED = ":lineage:pref_enabled";
     field public static final java.lang.String EXTRA_KEY = ":lineage:pref_key";
     field public static final java.lang.String EXTRA_SUMMARY = ":lineage:pref_summary";
@@ -821,7 +821,7 @@ package lineageos.trust {
     field public static final int TRUST_FEATURE_PLATFORM_SECURITY_PATCH = 2; // 0x2
     field public static final int TRUST_FEATURE_SELINUX = 0; // 0x0
     field public static final int TRUST_FEATURE_VENDOR_SECURITY_PATCH = 3; // 0x3
-    field public static final java.lang.String TRUST_INTERFACE_PERMISSION = "lineageos.permission.TRUST_INTERFACE";
+    field public static final java.lang.String TRUST_INTERFACE_PERMISSION = "android.permission.TRUST_INTERFACE";
     field public static final int TRUST_WARN_PUBLIC_KEY = 4; // 0x4
     field public static final int TRUST_WARN_SELINUX = 1; // 0x1
   }

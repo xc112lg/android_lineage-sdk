@@ -51,7 +51,7 @@ public final class TwilightTracker {
     private static final String TAG = "TwilightTracker";
     private static final boolean DEBUG = false;
     private static final String ACTION_UPDATE_TWILIGHT_STATE =
-            "lineageos.platform.intent.action.UPDATE_TWILIGHT_STATE";
+            "android.platform.intent.action.UPDATE_TWILIGHT_STATE";
 
     private final Object mLock = new Object();
 
