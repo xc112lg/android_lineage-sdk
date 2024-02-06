@@ -22,7 +22,7 @@
     xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     package="lineageos.platform"
     coreApp="true" android:sharedUserId="android.uid.system"
-    android:sharedUserLabel="@string/lineageos_system_label">
+    android:sharedUserLabel="lineageos_system_label">
 
     <protected-broadcast android:name="android.intent.action.SCREEN_CAMERA_GESTURE" />
     <protected-broadcast android:name="android.intent.action.INITIALIZE_LINEAGE_HARDWARE" />
@@ -42,47 +42,47 @@
     <!-- Allows an application access to the Lineage hardware abstraction framework
         <p>Not for use by third-party applications. -->
     <permission android:name="android.permission.HARDWARE_ABSTRACTION_ACCESS"
-                android:label="@string/permlab_useHardwareFramework"
-                android:description="@string/permdesc_useHardwareFramework"
+                android:label="permlab_useHardwareFramework"
+                android:description="permdesc_useHardwareFramework"
                 android:protectionLevel="signature|privileged" />
 
     <!-- Allows an application to write to Lineage system settings -->
     <permission android:name="android.permission.WRITE_SETTINGS"
-                android:label="@string/permlab_writeSettings"
-                android:description="@string/permdesc_writeSettings"
+                android:label="permlab_writeSettings"
+                android:description="permdesc_writeSettings"
                 android:protectionLevel="normal" />
 
     <!-- Allows an application to modify system profiles -->
     <permission android:name="android.permission.MODIFY_PROFILES"
-                android:label="@string/permlab_modifyProfiles"
-                android:description="@string/permdesc_modifyProfiles"
+                android:label="permlab_modifyProfiles"
+                android:description="permdesc_modifyProfiles"
                 android:protectionLevel="normal" />
 
     <!-- Allows an application to write to secure Lineage system settings.
         <p>Not for use by third-party applications. -->
     <permission android:name="android.permission.WRITE_SECURE_SETTINGS"
-                android:label="@string/permlab_writeSecureSettings"
-                android:description="@string/permdesc_writeSecureSettings"
+                android:label="permlab_writeSecureSettings"
+                android:description="permdesc_writeSecureSettings"
                 android:protectionLevel="signature|privileged|development" />
 
     <!-- Allows an application to manage LiveDisplay -->
     <permission android:name="android.permission.MANAGE_LIVEDISPLAY"
-                android:label="@string/permlab_manageLiveDisplay"
-                android:description="@string/permdesc_manageLiveDisplay"
+                android:label="permlab_manageLiveDisplay"
+                android:description="permdesc_manageLiveDisplay"
                 android:icon="@drawable/ic_launcher_lineageos"
                 android:protectionLevel="normal" />
 
     <!-- Allows an application to access the Trust interface -->
     <permission android:name="android.permission.TRUST_INTERFACE"
-                android:label="@string/permlab_trustInterface"
-                android:description="@string/permdesc_trustInterface"
+                android:label="permlab_trustInterface"
+                android:description="permdesc_trustInterface"
                 android:icon="@drawable/ic_trust"
                 android:protectionLevel="signature|privileged" />
 
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
-                 android:label="@string/lineageos_system_label"
+                 android:label="lineageos_system_label"
                  android:icon="@mipmap/ic_launcher"
                  android:allowClearUserData="false"
                  android:killAfterRestore="false"
@@ -90,8 +90,8 @@
 
     <!-- Permission for managing remote preferences -->
     <permission android:name="android.permission.MANAGE_REMOTE_PREFERENCES"
-                android:label="@string/permlab_manageRemotePrefs"
-                android:description="@string/permdesc_manageRemotePrefs"
+                android:label="permlab_manageRemotePrefs"
+                android:description="permdesc_manageRemotePrefs"
                 android:protectionLevel="signature|privileged" />
 
 </manifest>
