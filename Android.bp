@@ -84,34 +84,6 @@ lineage_sdk_LOCAL_STATIC_JAVA_LIBRARIES = [
 //
 // READ ME: ########################################################
 
-java_library {
-    name: "org.lineageos.platform",
-    installable: true,
-    sdk_version: "core_platform",
-    static_libs: lineage_sdk_LOCAL_STATIC_JAVA_LIBRARIES,
-
-    libs: [
-        "framework",
-        "services",
-    ],
-
-    srcs: [
-        lineage_sdk_src + "/**/*.java",
-        lineage_sdk_internal_src + "/**/*.java",
-        library_src + "/**/*.java",
-        lineage_sdk_src + "/**/I*.aidl",
-        lineage_sdk_internal_src + "/**/I*.aidl",
-
-        // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
-    ],
-
-    // Include aidl files from lineageos.app namespace as well as internal src aidl files
-    aidl: {
-        local_include_dirs: ["sdk/src/java"],
-    },
-}
-
 // Full target for use by platform apps
 // ============================================================
 
@@ -133,65 +105,4 @@ java_library {
     aidl: {
         local_include_dirs: ["sdk/src/java"],
     },
-}
-
-// Resources only target for use by core
-// ============================================================
-
-java_library {
-    name: "org.lineageos.platform.resources",
-
-    srcs: [
-        // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
-    ],
-
-    sdk_version: "core_current",
-}
-
-// The SDK
-// ============================================================
-
-// Included aidl files from lineageos.app namespace
-
-java_library {
-    name: "org.lineageos.platform.sdk",
-    required: ["services"],
-    static_libs: lineage_sdk_LOCAL_STATIC_JAVA_LIBRARIES,
-
-    srcs: [
-        lineage_sdk_src + "/**/*.java",
-        lineage_sdk_src + "/**/I*.aidl",
-
-        // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
-    ],
-
-    aidl: {
-        local_include_dirs: ["sdk/src/java"],
-    },
-}
-
-// Minimal LineageSettings lib for apex use.
-// ============================================================
-
-java_library {
-    name: "org.lineageos.platform.lineagesettings",
-    min_sdk_version: "30",
-
-    // LineageSettings is our main target, the rest are deps.
-    srcs: [
-        lineage_sdk_src + "/app/LineageContextConstants.java",
-        lineage_sdk_src + "/providers/LineageSettings.java",
-        lineage_sdk_src + "/trust/ITrustInterface.aidl",
-        lineage_sdk_src + "/trust/TrustInterface.java",
-
-        // For the generated R.java and Manifest.java
-        ":org.lineageos.platform-res{.aapt.srcjar}",
-    ],
-
-    // List of apex modules that can link against this lib
-    apex_available: [
-        "com.android.tethering",
-    ],
 }
