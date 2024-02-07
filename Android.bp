@@ -20,7 +20,9 @@ android_app {
     certificate: "platform",
 
     manifest: "lineage/res/AndroidManifest.xml",
-
+   srcs: [
+        ":framework-res{.export-package.apk}",
+    ],
     // Disable dexpreopt and verify_uses_libraries check as the app
     // contains no Java code to be dexpreopted.
     enforce_uses_libs: false,
