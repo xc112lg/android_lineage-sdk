@@ -41,7 +41,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := tests
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.lineageos.platform.sdk \
     android-support-test \
     mockito-target
 
